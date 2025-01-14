@@ -1,0 +1,15 @@
+{
+  "name": "nextracker",
+  "version": "1.0.0",
+  "description": "visualized patient health tracker",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "author": "Abdullah Saad",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
