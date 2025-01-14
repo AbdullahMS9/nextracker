@@ -1,6 +1,8 @@
 import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
 import stats from './data/stats.js';
-const port = 5002;
+const port = process.env.PORT || 5002;
 
 const app = express();
 
@@ -10,6 +12,11 @@ app.get('/api', (req, res) => {
 
 app.get('/api/stats', (req, res) => {
     res.json(stats);
+});
+
+app.get('/api/stats/:id', (req, res) => {
+    const stat = stats.find((s) => s.id === req.params.id);
+    res.json(stat);
 });
 
 app.listen(port, () => {
